@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <!DOCTYPE html>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -62,27 +63,31 @@
 				</h4>
 				<ul class="list-group mb-3">
 					<li class="list-group-item d-flex justify-content-between lh-sm">
+				
 						<div>
 							<h6 class="my-0">신청날짜</h6>
-						</div> <span class="text-muted">2022-09-01</span>
+						</div> 	<span class="text-muted">2022-09-01</span>
 					</li>
 					<li class="list-group-item d-flex justify-content-between lh-sm">
 						<div>
 							<h6 class="my-0">수업시간</h6>
-						</div> <span class="text-muted">16:00~17:00 ${vo.time }</span>
+						</div> <span class="text-muted"> ${list.name }</span>
 					</li>
 					<li class="list-group-item d-flex justify-content-between lh-sm">
 						<div>
-							<h6 class="my-0">강의명</h6>
-						</div> <span class="text-muted">필라테스 하체 ${vo.title }</span>
+							<h6 class="my-0">강의명 </h6>
+						</div> <span class="text-muted">${list.title }</span>
 					</li>
 					<li class="list-group-item d-flex justify-content-between lh-sm">
 						<div>
-							<h6 class="my-0">강사명</h6>
-						</div> <span class="text-muted">곽건호 ${vo.name }</span>
+							<h6 class="my-0">강사명 </h6>
+						</div> <span class="text-muted">${list.name }</span>
 					</li>
+
 					<li class="list-group-item d-flex justify-content-between"><span>수강인원</span>
-						<strong>{count }/ 5 명</strong></li>
+					
+						
+						<strong>${upHit} / ${list.max }</strong></li>
 				</ul>
 
 				<!-- <input button class="w-100 btn btn-primary btn-lg" type="button" onclick="handleOnClick()" value="신청하기")></button> -->

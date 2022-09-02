@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,22 +51,23 @@
 			        <th>날짜</th>
 			        <th>강의명</th>
 			        <th>강사</th>
-			        <th>수업시간</th>
 			        <th>수강인원</th>
 			        <th>수강신청</th>
 			      </tr>
 			    </thead>
+			    
 			    <tbody class="boxtop">
+			     <c:forEach var="vo" items="${list }" varStatus = "status">
 			      <tr>
-			        <td data-th="Date"> ????????? </td>
-			        <td data-th="Subject"> ?????????  </td>
-			        <td data-th="Teacher"> ????????? </td>
-			        <td data-th="Time"> ?????????   </td>
-			        <td data-th="MaxNumber"> ????????? </td>
+			        <td data-th="Date"> ${vo.date }     </td>
+			        <td data-th="Subject"> ${vo.title }   </td>
+			        <td data-th="Teacher"> ${vo.name } </td>
+			        <td data-th="MaxNumber"> ${vo.max } </td>
 			        <td data-th="ClassRegist">
-			          <a href="../enroll/detail"> 상세페이지 </a>
+			          <a href="../enroll/detail?id=${vo.id }"> 상세페이지 </a>
 			        </td>
 			      </tr>
+			      </c:forEach>
 			    </tbody>
 			  </table>
     	</div>

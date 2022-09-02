@@ -60,7 +60,7 @@ public class UserController {
 			
 			model.addAttribute("vo", schedulerService.getUser(vo));
 			session.setAttribute("sessionVO", vo);
-			return "enroll/list";
+			return "redirect:/enroll/list";
 		}
 		
 	}
