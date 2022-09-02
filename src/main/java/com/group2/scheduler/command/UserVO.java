@@ -3,20 +3,21 @@ package com.group2.scheduler.command;
 public class UserVO {
 
 	private String name;
-	private String id;
-	private String password;
+	private String userid;
+	private String pw;
+	private String valid_pw;
 	
 	public UserVO() {}
 
-	public UserVO(String name, String id, String password) {
+	public UserVO(String name, String userid, String pw) {
 		this.name = name;
-		this.id = id;
-		this.password = password;
+		this.userid = userid;
+		this.pw = pw;
 	}
 
 	@Override
 	public String toString() {
-		return "UserVO [name=" + name + ", id=" + id + ", password=" + password + "]";
+		return "UserVO [name=" + name + ", userid=" + userid + ", pw=" + pw + ", valid_pw=" + valid_pw + "]";
 	}
 
 	public String getName() {
@@ -27,20 +28,28 @@ public class UserVO {
 		this.name = name;
 	}
 
-	public String getId() {
-		return id;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPw() {
+		return pw;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPw(String pw) {
+		this.pw = pw;
 	}
-	
+
+	public String getValid_pw() {
+		return valid_pw;
+	}
+
+	public void setValid_pw(String valid_pw) {
+		this.valid_pw = valid_pw;
+	}
+
 }

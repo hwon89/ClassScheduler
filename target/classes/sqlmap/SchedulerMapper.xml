@@ -6,8 +6,27 @@
   
 <mapper namespace="com.group2.scheduler.service.SchedulerMapper">
 
-	<insert id="signin">
+	<insert id="signup">
 		INSERT INTO user(name, userid, pw)
-		VALUES(#{name}, #{id}, #{password})
+		VALUES(#{name}, #{userid}, #{pw})
 	</insert>
+	
+	<select id="getUser" resultType="UserVO">
+		SELECT *
+		FROM user
+		WHERE userid = #{userid}
+	</select>
+	
+	<select id="checkId" resultType="int">
+		SELECT COUNT(*)
+		FROM user
+		WHERE userid = #{userid}
+	</select>
+	
+	<select id="getPassword" resultType="string">
+		SELECT pw
+		FROM user
+		WHERE userid = #{userid}
+	</select>
+	
 </mapper>

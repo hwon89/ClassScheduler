@@ -8,5 +8,7 @@
 </head>
 <body>
 	<h3>등록 리스트 화면</h3>
+	현재 사용자 : ${ sessionVO.userid }
+	<button onclick="location.href='../user/logout'">로그아웃</button>
 </body>
 </html>
