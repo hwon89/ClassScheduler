@@ -71,7 +71,7 @@ public class UserController {
 						 RedirectAttributes ra) {
 		
 		String msg = "";
-		
+		System.out.println(vo.toString());
 		if (schedulerService.checkId(vo)!= 0) { //기존에 있는 아이디라면
 			
 			msg = "이미 존재하는 아이디입니다.";
