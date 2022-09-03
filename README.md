@@ -29,7 +29,132 @@ __구동환경__
 | Lombok | 1.18.24 |
 
 ---
-__미흡한점__
-- 
-- 
-- 
+
+__프로젝트 구조__
+
+![SpringMVCStructure](https://user-images.githubusercontent.com/109212415/188261731-ccfb39fa-87ef-40a7-ae7c-2f12fed35e7e.jpg)
+
+---
+__데이터베이스 구조__
+
+![dbtable (1)](https://user-images.githubusercontent.com/109212415/188261636-0d31a61a-7ddc-425c-b193-91d4e1761272.png)
+
+---
+
+__파일구조__
+
+    ├─src
+    │  ├─main
+    │  │  ├─java
+    │  │  │  └─com
+    │  │  │      └─group2
+    │  │  │          └─scheduler
+    │  │  │              ├─command
+    │  │  │              │      EnrollVO.java
+    │  │  │              │      RegisterVO.java
+    │  │  │              │      UserVO.java
+    │  │  │              │
+    │  │  │              ├─controller
+    │  │  │              │      EnrollController.java
+    │  │  │              │      HomeController.java
+    │  │  │              │      UserController.java
+    │  │  │              │
+    │  │  │              └─service
+    │  │  │                      SchedulerMapper.java
+    │  │  │                      SchedulerService.java
+    │  │  │                      SchedulerServiceImpl.java
+    │  │  │
+    │  │  ├─resources
+    │  │  │  │  log4j.xml
+    │  │  │  │
+    │  │  │  ├─db-config
+    │  │  │  │      hikari.properties
+    │  │  │  │
+    │  │  │  ├─mybatis-config
+    │  │  │  │      mybatis-config.xml
+    │  │  │  │
+    │  │  │  └─sqlmap
+    │  │  │          SchedulerMapper.xml
+    │  │  │
+    │  │  └─webapp
+    │  │      ├─resources
+    │  │      │  └─css
+    │  │      │          login.css
+    │  │      │          view.css
+    │  │      │
+    │  │      └─WEB-INF
+    │  │          │  web.xml
+    │  │          │
+    │  │          ├─spring
+    │  │          │      root-context.xml
+    │  │          │      servlet-context.xml
+    │  │          │
+    │  │          ├─tiles
+    │  │          │      footer.jsp
+    │  │          │      header.jsp
+    │  │          │      template.jsp
+    │  │          │      tiles.xml
+    │  │          │
+    │  │          └─views
+    │  │              │  home.jsp
+    │  │              │
+    │  │              ├─enroll
+    │  │              │      detail.jsp
+    │  │              │      list.jsp
+    │  │              │
+    │  │              └─user
+    │  │                      join.jsp
+    │  │                      login.jsp
+    │  │                      mypage.jsp
+    │  │
+    │  └─test
+    │      └─resources
+    │              log4j.xml
+    │
+    └─target
+        ├─classes
+        │  │  log4j.xml
+        │  │
+        │  ├─com
+        │  │  └─group2
+        │  │      └─scheduler
+        │  │          ├─command
+        │  │          │      EnrollVO.class
+        │  │          │      RegisterVO.class
+        │  │          │      UserVO.class
+        │  │          │
+        │  │          ├─controller
+        │  │          │      EnrollController.class
+        │  │          │      HomeController.class
+        │  │          │      UserController.class
+        │  │          │
+        │  │          └─service
+        │  │                  SchedulerMapper.class
+        │  │                  SchedulerService.class
+        │  │                  SchedulerServiceImpl.class
+        │  │
+        │  ├─db-config
+        │  │      hikari.properties
+        │  │
+        │  ├─mybatis-config
+        │  │      mybatis-config.xml
+        │  │
+        │  └─sqlmap
+        │          SchedulerMapper.xml
+        │
+        ├─m2e-wtp
+        │  └─web-resources
+        │      └─META-INF
+        │          │  MANIFEST.MF
+        │          │
+        │          └─maven
+        │              └─com.group2
+        │                  └─scheduler
+        │                          pom.properties
+        │                          pom.xml
+        │
+        └─test-classes
+                log4j.xml
+
+
+---
