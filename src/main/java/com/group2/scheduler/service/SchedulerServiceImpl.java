@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.group2.scheduler.command.EnrollVO;
 import com.group2.scheduler.command.RegisterVO;
@@ -37,14 +38,24 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	@Override
-	public List<EnrollVO> myPage(int userId) {
-		List<EnrollVO> list = schedulerMapper.myPage(userId);
+	public List<RegisterVO> myPage(int userId) {
+		List<RegisterVO> list = schedulerMapper.myPage(userId);
 		return list;
 	}
 	
 	@Override
-	public int register(RegisterVO vo) {
+	public int register(RegisterVO vo) throws Exception {
 		return schedulerMapper.register(vo);
+	}
+	
+	@Override
+	public int getRegister(int registerId) {
+		return schedulerMapper.getRegister(registerId);
+	}
+	
+	@Override
+	public int deleteRegister(int id) {
+		return schedulerMapper.deleteRegister(id);
 	}
 	
 	@Override
@@ -73,5 +84,5 @@ public class SchedulerServiceImpl implements SchedulerService {
 	public int countTutorId(int tutorId) {
 		return schedulerMapper.countTutorId(tutorId);
 	}
-	
+
 }

@@ -52,6 +52,14 @@ public class EnrollController {
 						   ) {
 		
 		int result = schedulerService.countTutorId(tutorId);
+		try {
+			RegisterVO vo = new RegisterVO(userId, tutorId);
+			schedulerService.register(vo);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			//실패에대한 처리
+		}
 		
 		model.addAttribute("countTutorId", result);
 		

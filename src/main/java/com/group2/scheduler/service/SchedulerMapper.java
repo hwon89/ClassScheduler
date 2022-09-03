@@ -16,9 +16,13 @@ public interface SchedulerMapper {
 	
 	public String getPassword(UserVO vo);
 	
-	public List<EnrollVO> myPage(int userId);
+	public List<RegisterVO> myPage(int userId);
 	
 	public int register(RegisterVO vo);
+	
+	public int getRegister(int registerId);
+	
+	public int deleteRegister(int id);
 	
 	public List<EnrollVO> getList();
 	

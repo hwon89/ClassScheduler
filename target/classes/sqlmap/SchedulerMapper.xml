@@ -29,16 +29,34 @@
 		WHERE userid = #{userid}
 	</select>
 	
-	<select id="myPage" resultType="EnrollVO">
-		SELECT date, name, title, time
+	<select id="myPage" resultType="RegisterVO">
+		
+<!-- 		SELECT date, name, title, time
 		FROM tutor t
-		WHERE t.id IN (SELECT tutorid FROM register WHERE userid = #{userid})
+		WHERE t.id IN (SELECT tutorid FROM register WHERE userid = #{userid}) -->
+		
+		SELECT  r.*,
+				t.date,
+		        t.name,
+		        t.title,
+		        t.time
+		FROM register r inner join tutor t
+		on r.tutorid = t. id 
+		where userid = #{userid}
+	
+	
 	</select>
 	
 	<insert id="register">
 		INSERT INTO register(userid, tutorid)
 		VALUES(#{userid}, #{tutorid})
 	</insert>
+	
+	<select id="getRegister" resultType="int">
+		SELECT *
+		FROM register
+		WHERE id = #{id}
+	</select>
 	
 	<delete id="deleteRegister">
 		DELETE
