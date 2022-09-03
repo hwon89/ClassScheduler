@@ -30,11 +30,9 @@
 	</select>
 	
 	<select id="myPage" resultType="EnrollVO">
-		SELECT date, time, title, name
-		FROM tutor
-		WHERE id = (SELECT tutorid
-					FROM register
-		            WHERE userid = #{userid})
+		SELECT date, name, title, time
+		FROM tutor t
+		WHERE t.id IN (SELECT tutorid FROM register WHERE userid = #{userid})
 	</select>
 	
 	<insert id="register">

@@ -1,47 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
-<!DOCTYPE html>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-	crossorigin="anonymous">
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-<title>Document</title>
-</head>
-<!-- <script>
-  function handleOnClick(){
-    let like = confirm("신청하시겠습니까?");
-    document.getElementById('result').innerText = like;
-  }
-</script> -->
-<header>
-  <nav class="py-2 bg-light border-bottom">
-    <div class="container d-flex flex-wrap">
-      <ul class="nav me-auto">
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">홈</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">예약페이지</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li>
-      </ul>
-      <div style="border: floatright">
-      <ul class="nav me-auto">
-        <li class="nav-item"><a class="nav-link link-dark"> ${sessionVO.userid}님 환영합니다</a></li>
-        <li class="nav-item"><a href="../user/login" class="nav-link link-dark px-2 active" aria-current="page">로그아웃</a></li>
-      </ul>
-      <!-- <ul class="nav">
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Login</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Sign up</a></li>
-      </ul> -->
-    </div>
-  </nav>
-</header>
+
 <body class="bg-light">
 <div id="wrap">
 <form action="register" method="post">
@@ -111,14 +71,3 @@
 	</form>
 </div>
 </body>
-<footer>
-  <style></style>
-  <div class="container">
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      </ul>
-      <p class="text-center text-muted" id="footer">group2. 건호, 혜림, 혜민, 혜현, 희정</p>
-    </footer>
-  </div>
-</footer>
-</html>

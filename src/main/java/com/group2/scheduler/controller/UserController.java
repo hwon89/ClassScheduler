@@ -1,5 +1,7 @@
 package com.group2.scheduler.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.group2.scheduler.command.EnrollVO;
 import com.group2.scheduler.command.UserVO;
 import com.group2.scheduler.service.SchedulerService;
 
@@ -95,17 +99,25 @@ public class UserController {
 		
 	}
 	
+	//로그아웃
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		
-		session.invalidate();
+		session.invalidate(); //세션 삭제
 		
 		return "redirect:/user/login";
 	}
 	
+	//마이페이지
 	@RequestMapping("/mypage")
-	public String myPage() {
+	public String myPage(HttpSession session,
+						 Model model) {
 		
-		return "user/mypage/";
+		UserVO vo = (UserVO)session.getAttribute("sessionVO"); //세션에서 받아온 vo를 UserVO에 저장
+		List<EnrollVO> list = schedulerService.myPage(vo.getId());
+		model.addAttribute("list", list);
+		
+		return "user/mypage";
 	}
+
 }

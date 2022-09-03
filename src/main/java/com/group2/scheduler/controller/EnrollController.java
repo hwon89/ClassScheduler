@@ -44,11 +44,10 @@ public class EnrollController {
 	
 	@RequestMapping("/register")
 	public String register(@RequestParam("sessionId") int userId,
-						   @RequestParam("id") int tutorId,
-						   HttpSession session) {
+						   @RequestParam("id") int tutorId
+						   ) {
 		
 		RegisterVO vo = new RegisterVO(userId, tutorId);
-		System.out.println(vo.toString());
 		schedulerService.register(vo);
 		
 		return "redirect:/enroll/list";

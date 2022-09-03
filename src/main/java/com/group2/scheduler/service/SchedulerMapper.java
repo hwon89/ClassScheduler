@@ -16,7 +16,7 @@ public interface SchedulerMapper {
 	
 	public String getPassword(UserVO vo);
 	
-	public EnrollVO myPage(String userid);
+	public List<EnrollVO> myPage(int userId);
 	
 	public int register(RegisterVO vo);
 	

@@ -37,8 +37,9 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	@Override
-	public EnrollVO myPage(String userid) {
-		return null;
+	public List<EnrollVO> myPage(int userId) {
+		List<EnrollVO> list = schedulerMapper.myPage(userId);
+		return list;
 	}
 	
 	@Override
@@ -67,6 +68,5 @@ public class SchedulerServiceImpl implements SchedulerService {
 	public EnrollVO getDetail(int id) {
 		return schedulerMapper.getDetail(id);
 	}
-
 	
 }
