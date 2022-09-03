@@ -28,7 +28,10 @@
 				        <td data-th="Title"> ${vo.title }   </td>
 				        <td data-th="Name"> ${vo.name } </td>
 				        <td data-th="ClassRegist">
-				          <a href="../user/delete"> 삭제 </a>
+				        <form action="deleteRegister" method="post" id="delete_form">
+				        	<input type="hidden" name="registerId" value="${ sessionVO.id }">
+				        	<a href="#" onclick="document.getElementById('delete_form').submit();">삭제</a>				        
+				        </form>
 				        </td>
 			      	</tr>
 			    </c:forEach>

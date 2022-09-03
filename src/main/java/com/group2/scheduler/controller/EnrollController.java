@@ -47,8 +47,14 @@ public class EnrollController {
 						   @RequestParam("id") int tutorId
 						   ) {
 		
-		RegisterVO vo = new RegisterVO(userId, tutorId);
-		schedulerService.register(vo);
+		try {
+			RegisterVO vo = new RegisterVO(userId, tutorId);
+			schedulerService.register(vo);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			//실패에대한 처리
+		}
 		
 		return "redirect:/enroll/list";
 	}

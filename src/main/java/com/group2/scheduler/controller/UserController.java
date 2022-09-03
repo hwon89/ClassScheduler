@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.group2.scheduler.command.EnrollVO;
+import com.group2.scheduler.command.RegisterVO;
 import com.group2.scheduler.command.UserVO;
 import com.group2.scheduler.service.SchedulerService;
 
@@ -114,10 +115,22 @@ public class UserController {
 						 Model model) {
 		
 		UserVO vo = (UserVO)session.getAttribute("sessionVO"); //세션에서 받아온 vo를 UserVO에 저장
-		List<EnrollVO> list = schedulerService.myPage(vo.getId());
+		
+		System.out.println(vo.getId());
+		
+		List<RegisterVO> list = schedulerService.myPage(vo.getId());
 		model.addAttribute("list", list);
 		
 		return "user/mypage";
 	}
-
+	
+	//선택한 강의 삭제
+//	@RequestMapping("/deleteRegister")
+//	public String deleteRegister() {
+//		schedulerService.getRegister(-);
+//		schedulerService.myPage(int );
+//		
+//		return "redirect:/user/mypage";
+//	}
+//	
 }
