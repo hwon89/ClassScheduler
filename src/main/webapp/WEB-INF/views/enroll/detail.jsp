@@ -37,7 +37,7 @@
       <div style="border: floatright">
       <ul class="nav me-auto">
         
-        <li class="nav-item"><a class="nav-link link-dark"> ${vo.id}님 환영합니다</a></li>
+        <li class="nav-item"><a class="nav-link link-dark"> ${sessionVO.userid}님 환영합니다</a></li>
         <li class="nav-item"><a href="../user/login" class="nav-link link-dark px-2 active" aria-current="page">로그아웃</a></li>
         
       </ul>
@@ -111,7 +111,8 @@
         })
         </script>
 	
-		<button type="submit" class="w-100 btn btn-outline-info btn-lg">취소하기</button>
+		<button type="submit" class="w-100 btn btn-outline-info btn-lg">
+		<a href="../enroll/list"> 취소하기</a></button>
 			</div>
 	</div>
 </div>
