@@ -39,7 +39,7 @@
 					<li class="list-group-item d-flex justify-content-between"><span>수강인원</span>
 					
 						
-						<strong>${upHit} / ${list.max}</strong></li>
+						<strong>${countTutorId} / ${list.max}</strong></li>
 				</ul>
 				
 	

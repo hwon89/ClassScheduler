@@ -59,5 +59,9 @@
   		UPDATE tutor SET hit = hit +1
   		WHERE max = #{max}
   	</update>
+  	
+  	<select id="countTutorId" resultType="int">
+  		SELECT count(*) FROM register WHERE tutorid = #{tutorid}
+  	</select>
 	
 </mapper>

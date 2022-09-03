@@ -27,5 +27,7 @@ public interface SchedulerMapper {
 	public void upHit(int max);
 	
 	public EnrollVO getListDetail(int id);
+
+	public int countTutorId(int tutorId);
 }
 

@@ -30,4 +30,6 @@ public interface SchedulerService {
 	public EnrollVO getListDetail(int id);
 	
 	EnrollVO getDetail(int id);
+
+	public int countTutorId(int tutorId);
 }

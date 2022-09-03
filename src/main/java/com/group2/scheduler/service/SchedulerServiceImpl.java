@@ -68,5 +68,10 @@ public class SchedulerServiceImpl implements SchedulerService {
 	public EnrollVO getDetail(int id) {
 		return schedulerMapper.getDetail(id);
 	}
+
+	@Override
+	public int countTutorId(int tutorId) {
+		return schedulerMapper.countTutorId(tutorId);
+	}
 	
 }
