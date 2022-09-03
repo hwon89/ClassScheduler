@@ -49,6 +49,7 @@
     			<thead class="boxblue">
 			      <tr >
 			        <th>날짜</th>
+			        <th>시간</th>
 			        <th>강의명</th>
 			        <th>강사</th>
 			        <th>수강인원</th>
@@ -60,6 +61,7 @@
 			     <c:forEach var="vo" items="${list }" varStatus = "status">
 			      <tr>
 			        <td data-th="Date"> ${vo.date }     </td>
+			        <td data-th="Date"> ${vo.time }     </td>
 			        <td data-th="Subject"> ${vo.title }   </td>
 			        <td data-th="Teacher"> ${vo.name } </td>
 			        <td data-th="MaxNumber"> ${vo.max } </td>

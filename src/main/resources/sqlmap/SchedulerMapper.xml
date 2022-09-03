@@ -30,12 +30,23 @@
 	</select>
 	
 	<select id="myPage" resultType="EnrollVO">
-		SELECT *
-		FROM lecture as lect
-		WHERE lect.id = ( SELECT lectureid
-						  FROM register
-						  WHERE userid = #{userid})
+		SELECT date, time, title, name
+		FROM tutor
+		WHERE id = (SELECT tutorid
+					FROM register
+		            WHERE userid = #{userid})
 	</select>
+	
+	<insert id="register">
+		INSERT INTO register(userid, tutorid)
+		VALUES(#{userid}, #{tutorid})
+	</insert>
+	
+	<delete id="deleteRegister">
+		DELETE
+		FROM register
+		WHERE id = #{id}
+	</delete>
 
 	<select id="getList" resultType="EnrollVO">
 		SELECT * FROM tutor

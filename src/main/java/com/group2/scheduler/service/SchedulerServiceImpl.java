@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.group2.scheduler.command.EnrollVO;
+import com.group2.scheduler.command.RegisterVO;
 import com.group2.scheduler.command.UserVO;
 
 @Service("SchedulerService")
@@ -36,6 +37,16 @@ public class SchedulerServiceImpl implements SchedulerService {
 	}
 
 	@Override
+	public EnrollVO myPage(String userid) {
+		return null;
+	}
+	
+	@Override
+	public int register(RegisterVO vo) {
+		return schedulerMapper.register(vo);
+	}
+	
+	@Override
 	public List<EnrollVO> getList() {
 		List<EnrollVO> list = schedulerMapper.getList();
 		return list;
@@ -57,9 +68,5 @@ public class SchedulerServiceImpl implements SchedulerService {
 		return schedulerMapper.getDetail(id);
 	}
 
-	@Override
-	public EnrollVO myPage(String userid) {
-		return null;
-	}
 	
 }

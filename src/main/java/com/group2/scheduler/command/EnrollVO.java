@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class EnrollVO {
-	private String id;
+	private int id;
 	private String date;
+	private String time;
 	private String name;
 	private String title;
 	private int max;

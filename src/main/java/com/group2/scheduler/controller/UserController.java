@@ -57,9 +57,9 @@ public class UserController {
 			
 			return "redirect:/user/login";
 		} else { //로그인 성공
-			
-			model.addAttribute("vo", schedulerService.getUser(vo));
-			session.setAttribute("sessionVO", vo);
+			UserVO userVO = schedulerService.getUser(vo);
+			model.addAttribute("vo", userVO);
+			session.setAttribute("sessionVO", userVO);
 			return "redirect:/enroll/list";
 		}
 		
@@ -87,7 +87,8 @@ public class UserController {
 		} else { //회원가입 성공
 			
 			schedulerService.signup(vo);
-			ra.addFlashAttribute("msg", "회원가입을 축하드립니다");
+			msg = "회원가입을 축하드립니다.";
+			ra.addFlashAttribute("msg", msg);
 			
 			return "redirect:/user/login";
 		}

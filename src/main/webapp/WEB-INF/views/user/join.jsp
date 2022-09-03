@@ -12,7 +12,7 @@
 <title>회원가입</title>
 </head>
 
-<body>
+<body class="bg-light">
 
 <div id="wrap">
 	<div id="container">

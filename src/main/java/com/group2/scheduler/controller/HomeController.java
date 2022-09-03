@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/")
 	public String home() {
+		
 		System.out.println("실행 완료");
-		return "home";
+		
+		return "redirect:/user/login";
 	}
 	
 }

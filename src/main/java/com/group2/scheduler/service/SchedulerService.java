@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.group2.scheduler.command.EnrollVO;
+import com.group2.scheduler.command.RegisterVO;
 import com.group2.scheduler.command.UserVO;
 
 
@@ -19,6 +20,8 @@ public interface SchedulerService {
 	public String getPassword(UserVO vo);
 	
 	public EnrollVO myPage(String userid);
+	
+	public int register(RegisterVO vo);
 	
 	public List<EnrollVO> getList();
 	
