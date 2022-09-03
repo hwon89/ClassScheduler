@@ -36,5 +36,19 @@
 						  FROM register
 						  WHERE userid = #{userid})
 	</select>
+
+	<select id="getList" resultType="EnrollVO">
+		SELECT * FROM tutor
+	</select>	
+	
+	<select id="getDetail" resultType="EnrollVO">
+  		SELECT * FROM tutor
+  		WHERE id = #{id}
+  	</select>
+  	
+  	<update id="upHit">
+  		UPDATE tutor SET hit = hit +1
+  		WHERE max = #{max}
+  	</update>
 	
 </mapper>
