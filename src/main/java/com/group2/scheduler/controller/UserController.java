@@ -100,6 +100,11 @@ public class UserController {
 		session.invalidate();
 		
 		return "redirect:/user/login";
+	}
+	
+	@RequestMapping("/mypage")
+	public String myPage() {
 		
+		return "user/mypage/";
 	}
 }

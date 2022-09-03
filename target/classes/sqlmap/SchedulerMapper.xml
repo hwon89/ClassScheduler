@@ -29,4 +29,12 @@
 		WHERE userid = #{userid}
 	</select>
 	
+	<select id="myPage" resultType="EnrollVO">
+		SELECT *
+		FROM lecture as lect
+		WHERE lect.id = ( SELECT lectureid
+						  FROM register
+						  WHERE userid = #{userid})
+	</select>
+	
 </mapper>
